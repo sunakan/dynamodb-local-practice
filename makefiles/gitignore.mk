@@ -17,7 +17,6 @@ GIT_IGNORE_URL  := https://www.toptal.com/developers/gitignore/api/$(IGNORE_LIST
 .PHONY: setup-gitignore
 setup-gitignore: .gitignore ## .gitignoreをsetup
 	@make --no-print-directory add-my-go-env-for-gitignore
-	@make --no-print-directory add-rq-for-gitignore
 
 .PHONY: add-my-go-env-for-gitignore
 add-my-go-env-for-gitignore:
@@ -27,7 +26,3 @@ add-my-go-env-for-gitignore:
 	grep '^.cache$$' .gitignore || echo '.cache' >> .gitignore
 	grep '^.config$$' .gitignore || echo '.config' >> .gitignore
 	grep '^__debug_bin$$' .gitignore || echo '__debug_bin' >> .gitignore
-
-.PHONY: add-rq-for-gitignore
-add-rq-for-gitignore:
-	grep 'rq' .gitignore || echo 'rq' >> .gitignore
