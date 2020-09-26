@@ -1,0 +1,14 @@
+== DynamoDB をlocalで練習
+
+== 必要なツール
+
+* AWSCLI
+
+.awscliの設定はダミーでよい
+----
+$ aws configure
+AWS Access Key ID [None]: dummy
+AWS Secret Access Key [None]: dummy
+Default region name [None]: ap-northeast-1
+Default output format [None]: json
+----

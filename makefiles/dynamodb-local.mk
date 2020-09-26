@@ -1,11 +1,7 @@
-include makefiles/gitignore.mk
-include makefiles/rq.mk
-include makefiles/help.mk
-include makefiles/dynamodb-local.mk
-
 ################################################################################
 # 変数
 ################################################################################
+ENDPOINT_URL := http://localhost:8000
 
 ################################################################################
 # マクロ
@@ -14,10 +10,10 @@ include makefiles/dynamodb-local.mk
 ################################################################################
 # タスク
 ################################################################################
-.PHONY: up
-up:
-	docker-compose up
+.PHONY: list-tables
+list-tables: ## dynamodb tableの一覧
+	aws dynamodb list-tables --endpoint-url $(ENDPOINT_URL)
 
-.PHONY: down
-down:
-	docker-compose down
+.PHONY: create-table
+create-table: ## dynamodb tableの作成
+	aws dynamodb create-table --table-name BookCollection
