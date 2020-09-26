@@ -21,6 +21,15 @@ Default output format [None]: json
 $ make up
 ----
 
+.例えばテーブル一覧
+----
+$ make list-tables
+aws dynamodb list-tables --endpoint-url http://localhost:8000
+{
+    "TableNames": []
+}
+----
+
 .終了
 ----
 $ make down
