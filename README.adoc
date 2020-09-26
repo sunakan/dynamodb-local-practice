@@ -1,8 +1,9 @@
-== DynamoDB をlocalで練習
+= DynamoDB をlocalで
 
 == 必要なツール
 
-* AWSCLI
+* awscli
+* jq
 
 .awscliの設定はダミーでよい
 ----
@@ -11,4 +12,28 @@ AWS Access Key ID [None]: dummy
 AWS Secret Access Key [None]: dummy
 Default region name [None]: ap-northeast-1
 Default output format [None]: json
+----
+
+== 実行
+
+.開始
+----
+$ make up
+----
+
+.終了
+----
+$ make down
+----
+
+== ざっくりhelp
+
+.help
+----
+$ make help | grep dynamodb
+list-tables          dynamodb tableの一覧
+create-table         dynamodb tableの作成
+describe-table       dynamodb tableの詳細
+put-item             dynamodb サンプルデータを入れる
+scan                 dynamodb データ一覧
 ----
